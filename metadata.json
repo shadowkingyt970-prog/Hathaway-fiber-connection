@@ -1,0 +1,6 @@
+{
+  "name": "Hathway Fiber Connect",
+  "description": "Authorized partner portal for new Hathway Fiber broadband & digital TV connections with area feasibility check and instant booking.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

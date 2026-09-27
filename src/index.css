@@ -1,0 +1,452 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --font-display: 'Outfit', 'Plus Jakarta Sans', system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  html, body {
+    scroll-behavior: smooth;
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+    max-width: 100vw;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+.safe-area-pb {
+  padding-bottom: max(0.5rem, env(safe-area-inset-bottom, 0px));
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-sans {
+  font-family: var(--font-sans);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+/* ========================================================
+   HIGH-CONTRAST LIGHT MODE (ACCESSIBILITY WCAG AAA)
+   ======================================================== */
+
+html.light,
+html.light body,
+html.light #root {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+}
+
+/* Base Surfaces & Backgrounds */
+html.light .bg-neutral-950 {
+  background-color: #ffffff !important;
+}
+
+html.light .bg-neutral-950\/90,
+html.light .bg-neutral-950\/80 {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+}
+
+html.light .bg-neutral-900 {
+  background-color: #f8fafc !important;
+}
+
+html.light .bg-neutral-900\/90,
+html.light .bg-neutral-900\/80,
+html.light .bg-neutral-900\/70,
+html.light .bg-neutral-900\/60,
+html.light .bg-neutral-900\/50,
+html.light .bg-neutral-900\/40,
+html.light .bg-neutral-900\/30 {
+  background-color: #f1f5f9 !important;
+}
+
+html.light .bg-neutral-800 {
+  background-color: #e2e8f0 !important;
+}
+
+html.light .bg-neutral-800\/80,
+html.light .bg-neutral-800\/60 {
+  background-color: #e2e8f0 !important;
+}
+
+html.light .hover\:bg-neutral-900:hover {
+  background-color: #f1f5f9 !important;
+}
+
+html.light .hover\:bg-neutral-800:hover {
+  background-color: #e2e8f0 !important;
+}
+
+html.light .hover\:bg-neutral-700:hover {
+  background-color: #cbd5e1 !important;
+}
+
+/* High-Contrast Borders */
+html.light .border-neutral-800,
+html.light .border-neutral-800\/80,
+html.light .border-neutral-800\/60,
+html.light .border-neutral-800\/50,
+html.light .border-neutral-800\/40 {
+  border-color: #cbd5e1 !important;
+}
+
+html.light .border-neutral-700,
+html.light .border-neutral-700\/80 {
+  border-color: #94a3b8 !important;
+}
+
+html.light .border-neutral-900 {
+  border-color: #e2e8f0 !important;
+}
+
+html.light .divide-neutral-800 > :not([hidden]) ~ :not([hidden]),
+html.light .divide-neutral-800\/80 > :not([hidden]) ~ :not([hidden]) {
+  border-color: #cbd5e1 !important;
+}
+
+/* High-Contrast Typography */
+html.light .text-white {
+  color: #020617 !important;
+}
+
+/* Ensure colored solid buttons always have pure white text for maximum contrast */
+html.light .bg-rose-600,
+html.light .bg-rose-600 *,
+html.light .bg-rose-500,
+html.light .bg-rose-500 *,
+html.light .bg-rose-700,
+html.light .bg-rose-700 *,
+html.light .bg-emerald-600,
+html.light .bg-emerald-600 *,
+html.light .bg-emerald-700,
+html.light .bg-emerald-700 *,
+html.light button.bg-rose-600,
+html.light a.bg-rose-600,
+html.light button.bg-emerald-600,
+html.light a.bg-emerald-600 {
+  color: #ffffff !important;
+}
+
+html.light .text-neutral-100 {
+  color: #0f172a !important;
+}
+
+html.light .text-neutral-200 {
+  color: #1e293b !important;
+}
+
+html.light .text-neutral-300 {
+  color: #334155 !important;
+}
+
+html.light .text-neutral-400 {
+  color: #475569 !important;
+}
+
+html.light .text-neutral-500 {
+  color: #64748b !important;
+}
+
+html.light .hover\:text-white:hover {
+  color: #020617 !important;
+}
+
+/* Form Controls & Inputs */
+html.light input,
+html.light select,
+html.light textarea {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  border-color: #94a3b8 !important;
+}
+
+html.light input:focus,
+html.light select:focus,
+html.light textarea:focus {
+  border-color: #e11d48 !important;
+  outline: 2px solid rgba(225, 29, 72, 0.25) !important;
+}
+
+html.light input::placeholder,
+html.light textarea::placeholder {
+  color: #64748b !important;
+}
+
+/* High Contrast Accent Colors */
+html.light .text-rose-400,
+html.light .text-rose-500 {
+  color: #be123c !important; /* rose-700 for optimal contrast on white */
+}
+
+html.light .text-emerald-400,
+html.light .text-emerald-300 {
+  color: #047857 !important; /* emerald-700 */
+}
+
+html.light .bg-emerald-950,
+html.light .bg-emerald-950\/40,
+html.light .bg-emerald-950\/60 {
+  background-color: #ecfdf5 !important;
+}
+
+html.light .border-emerald-800,
+html.light .border-emerald-800\/40,
+html.light .border-emerald-800\/50,
+html.light .border-emerald-800\/60,
+html.light .border-emerald-800\/80 {
+  border-color: #6ee7b7 !important;
+}
+
+html.light .text-blue-300,
+html.light .text-blue-400 {
+  color: #1d4ed8 !important; /* blue-700 */
+}
+
+html.light .bg-blue-950,
+html.light .bg-blue-950\/60 {
+  background-color: #eff6ff !important;
+}
+
+html.light .border-blue-800,
+html.light .border-blue-800\/50 {
+  border-color: #93c5fd !important;
+}
+
+html.light .text-amber-300,
+html.light .text-amber-400 {
+  color: #b45309 !important; /* amber-700 */
+}
+
+html.light .bg-amber-950,
+html.light .bg-amber-950\/40,
+html.light .bg-amber-950\/60 {
+  background-color: #fffbeb !important;
+}
+
+html.light .border-amber-800,
+html.light .border-amber-800\/40,
+html.light .border-amber-800\/50 {
+  border-color: #fcd34d !important;
+}
+
+html.light .bg-rose-950,
+html.light .bg-rose-950\/40,
+html.light .bg-rose-950\/60 {
+  background-color: #fff1f2 !important;
+}
+
+html.light .border-rose-800,
+html.light .border-rose-800\/40,
+html.light .border-rose-800\/50,
+html.light .border-rose-800\/60 {
+  border-color: #fca5a5 !important;
+}
+
+/* Modals Overlay & Shadows */
+html.light .bg-black\/80,
+html.light .bg-black\/85 {
+  background-color: rgba(15, 23, 42, 0.65) !important;
+}
+
+html.light .shadow-2xl,
+html.light .shadow-xl {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Accessible focus ring for interactive elements */
+:focus-visible {
+  outline: 2px solid #e11d48;
+  outline-offset: 2px;
+}
+
+/* ========================================================
+   BROADBAND FTTH OPTICAL & WI-FI ANIMATIONS
+   ======================================================== */
+
+@keyframes fiberFlow {
+  0% {
+    stroke-dashoffset: 48;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes wifiPulse {
+  0% {
+    transform: scale(0.65);
+    opacity: 0.95;
+  }
+  60% {
+    opacity: 0.45;
+  }
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}
+
+@keyframes laserFlash {
+  0%, 100% {
+    opacity: 0.45;
+    filter: drop-shadow(0 0 4px rgba(225, 29, 72, 0.4));
+  }
+  50% {
+    opacity: 1;
+    filter: drop-shadow(0 0 14px rgba(225, 29, 72, 0.95));
+  }
+}
+
+@keyframes ledFlicker {
+  0%, 100% { opacity: 1; }
+  18% { opacity: 0.35; }
+  35% { opacity: 0.95; }
+  62% { opacity: 0.4; }
+  82% { opacity: 1; }
+}
+
+@keyframes photonPacket {
+  0% {
+    transform: translateX(0) scale(0.8);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+    transform: translateX(20%) scale(1.1);
+  }
+  80% {
+    opacity: 1;
+    transform: translateX(80%) scale(1);
+  }
+  100% {
+    transform: translateX(100%) scale(0.8);
+    opacity: 0;
+  }
+}
+
+@keyframes waveArc {
+  0% {
+    opacity: 0.2;
+    transform: scale(0.9);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.2;
+    transform: scale(1.1);
+  }
+}
+
+.animate-fiber-flow {
+  stroke-dasharray: 8 8;
+  animation: fiberFlow 1.2s linear infinite;
+}
+
+.animate-fiber-flow-fast {
+  stroke-dasharray: 8 8;
+  animation: fiberFlow 0.55s linear infinite;
+}
+
+.animate-wifi-pulse-1 {
+  animation: wifiPulse 2.2s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+}
+
+.animate-wifi-pulse-2 {
+  animation: wifiPulse 2.2s cubic-bezier(0.16, 1, 0.3, 1) infinite 0.7s;
+}
+
+.animate-wifi-pulse-3 {
+  animation: wifiPulse 2.2s cubic-bezier(0.16, 1, 0.3, 1) infinite 1.4s;
+}
+
+.animate-led-flicker {
+  animation: ledFlicker 0.35s ease-in-out infinite alternate;
+}
+
+.animate-led-flicker-slow {
+  animation: ledFlicker 0.8s ease-in-out infinite alternate;
+}
+
+.animate-laser-flash {
+  animation: laserFlash 2s ease-in-out infinite;
+}
+
+.animate-photon-packet {
+  animation: photonPacket 1.8s ease-in-out infinite;
+}
+
+/* ========================================================
+   BROADBAND MASCOT (OPTIBOT) KEYFRAMES
+   ======================================================== */
+
+@keyframes mascotBob {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(1.5deg);
+  }
+}
+
+@keyframes mascotArmWave {
+  0%, 100% {
+    transform: rotate(0deg);
+    transform-origin: 20px 65px;
+  }
+  25% {
+    transform: rotate(-18deg);
+    transform-origin: 20px 65px;
+  }
+  75% {
+    transform: rotate(14deg);
+    transform-origin: 20px 65px;
+  }
+}
+
+@keyframes mascotBlink {
+  0%, 90%, 100% {
+    transform: scaleY(1);
+  }
+  95% {
+    transform: scaleY(0.1);
+  }
+}
+
+@keyframes opticalSparkle {
+  0%, 100% {
+    transform: scale(0.7) rotate(0deg);
+    opacity: 0.3;
+  }
+  50% {
+    transform: scale(1.3) rotate(180deg);
+    opacity: 1;
+  }
+}
+
+.animate-mascot-bob {
+  animation: mascotBob 3.2s ease-in-out infinite;
+}
+
+.animate-mascot-wave {
+  animation: mascotArmWave 1.8s ease-in-out infinite;
+}
+
+.animate-mascot-blink {
+  animation: mascotBlink 4s ease-in-out infinite;
+  transform-origin: center;
+}
+
+.animate-sparkle {
+  animation: opticalSparkle 1.5s ease-in-out infinite;
+  transform-origin: center;
+}
+

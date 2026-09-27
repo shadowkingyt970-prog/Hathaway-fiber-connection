@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Sitemap for Googlebot & search crawlers
+Sitemap: https://ais-pre-yjwj2u2wkczqbm4vdooazm-672938747348.asia-southeast1.run.app/sitemap.xml

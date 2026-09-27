@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#1E1B4B" />
+      <stop offset="100%" stop-color="#0F172A" />
+    </linearGradient>
+    <linearGradient id="hathwayRed" x1="4" y1="4" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FF2E56" />
+      <stop offset="50%" stop-color="#E11D48" />
+      <stop offset="100%" stop-color="#9F1239" />
+    </linearGradient>
+    <linearGradient id="fiberGlow" x1="0" y1="24" x2="48" y2="24" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#38BDF8" />
+      <stop offset="50%" stop-color="#FFFFFF" />
+      <stop offset="100%" stop-color="#FB7185" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Outer rounded squircle container -->
+  <rect x="2" y="2" width="44" height="44" rx="12" fill="#0A0A0C" stroke="#262626" stroke-width="1.5" />
+  <rect x="2" y="2" width="44" height="44" rx="12" fill="url(#hathwayRed)" fill-opacity="0.12" />
+
+  <!-- Optical Fiber Hexagon Core -->
+  <path d="M24 6L39 15V33L24 42L9 33V15L24 6Z" stroke="url(#hathwayRed)" stroke-width="2" fill="#120B10" />
+
+  <!-- Modern Optical 'H' Monogram with Fiber Beams -->
+  <!-- Left core strand -->
+  <path d="M17 14V34" stroke="url(#hathwayRed)" stroke-width="3.5" stroke-linecap="round" />
+  <circle cx="17" cy="14" r="2" fill="#FFFFFF" />
+  <circle cx="17" cy="34" r="2" fill="#FF2E56" />
+
+  <!-- Right core strand -->
+  <path d="M31 14V34" stroke="url(#hathwayRed)" stroke-width="3.5" stroke-linecap="round" />
+  <circle cx="31" cy="14" r="2" fill="#FF2E56" />
+  <circle cx="31" cy="34" r="2" fill="#FFFFFF" />
+
+  <!-- Central high-speed horizontal laser link -->
+  <path d="M17 24H31" stroke="url(#fiberGlow)" stroke-width="3" stroke-linecap="round" filter="url(#glow)" />
+  <circle cx="24" cy="24" r="2.5" fill="#FFFFFF" filter="url(#glow)" />
+</svg>
